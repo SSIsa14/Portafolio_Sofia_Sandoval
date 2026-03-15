@@ -164,7 +164,7 @@ nav .md\\:flex a:hover {
 }
 
 .project-img {
-    flex: 0 0 380px;
+    flex: 0 0 400px;
   width: 100%;
   height: 420px;
   object-fit: cover;
@@ -231,6 +231,26 @@ nav .md\\:flex a:hover {
 
 .arrow.left { left: -80px; }
 .arrow.right { right: -80px; }
+
+.project-glow-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible; /* Importante */
+}
+
+.project-glow-wrapper img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-glow-wrapper:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px 10px rgba(93, 155, 213, 0.35);
+}
 
 /* =============================
    TECH ITEMS
@@ -419,6 +439,7 @@ nav .md\\:flex a:hover {
   padding: 6px 10px;
   border-radius: 8px;
   margin: 4px;
+  margin-bottom: 1.5rem;
 }
 
 .project-slide .tech-item:hover {
@@ -488,6 +509,7 @@ nav .md\\:flex a:hover {
   padding: 10px 20px;
   border-radius: 8px;
   display: flex;
+  margin-bottom: 2rem;
   align-items: center;
   gap: 8px;
   color: #E3F2FF;
@@ -583,14 +605,52 @@ nav .md\\:flex a:hover {
     flex-direction: column;
   }
 
-  .arrow {
-    position: relative;
-    top: auto;
-    transform: none;
-    margin: 0.5rem 0;
-    width: 45px;
-    height: 45px;
+
+  /* --- Desktop --- */
+@media (min-width: 769px) {
+  .arrow.desktop {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px; height: 45px;
+    background: rgba(20,44,71,0.5);
+    border: 1px solid rgba(93,155,213,0.3);
+    color: #E3F2FF;
+    display: flex; justify-content:center; align-items:center;
+    cursor: pointer; z-index: 30;
+    transition: all 0.3s;
   }
+
+  .arrow.desktop.left { left: 10px; }
+  .arrow.desktop.right { right: 10px; }
+
+  .arrow.desktop:hover {
+    background: #5D9BD5;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 10px rgba(93,155,213,0.5);
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .arrow.mobile {
+    position: relative;
+    transform: none;
+    margin: 0 1rem;
+    width: 45px; height: 45px;
+    background: rgba(20,44,71,0.5);
+    border: 1px solid rgba(93,155,213,0.3);
+    display: flex; justify-content:center; align-items:center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .arrow.mobile:hover {
+    background: #5D9BD5;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(93,155,213,0.4);
+  }
+}
 
   .project-desc {
     font-size: 1rem;
