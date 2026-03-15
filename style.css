@@ -1,0 +1,571 @@
+/* =============================
+   RESET Y BASICOS
+============================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0A1C2E;
+  color: #E3F2FF;
+}
+
+/* =============================
+   NAVBAR MODERNO
+============================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(10, 28, 46, 0.95); /* fondo oscuro semi-transparente */
+  backdrop-filter: blur(12px); /* desenfoque suave del fondo */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* sombra elegante */
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+/* Navbar contenido */
+nav .max-w-6xl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+/* Logo */
+nav h1 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #E3F2FF;
+  letter-spacing: 0.5px;
+}
+
+/* Links escritorio */
+nav .md\\:flex a {
+  color: #E3F2FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav .md\\:flex a:hover {
+  color: #5D9BD5;
+}
+
+/* Botón hamburguesa móvil */
+#menu-btn {
+  display: block;
+  color: #E3F2FF;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+}
+
+/* Menú móvil */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(20,44,71,0.95), rgba(10,28,46,0.95));
+  backdrop-filter: blur(12px);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  transition: right 0.3s ease;
+  z-index: 40;
+}
+
+/* Botón cerrar menú móvil */
+#close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+  color: #E3F2FF;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Links menú móvil */
+#mobile-menu a {
+  color: #E3F2FF;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#mobile-menu a:hover {
+  color: #5D9BD5;
+}
+
+/* Responsive: esconder botón hamburguesa y mostrar links */
+@media (min-width: 768px) {
+  #menu-btn { display: none; }
+  #mobile-menu { display: none; }
+}
+
+/* =============================
+   ANIMACION SCROLL
+============================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =============================
+   TARJETAS HABILIDADES
+============================= */
+.skill-card {
+  transition: all 0.35s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* =============================
+   PROYECTOS
+============================= */
+
+.project-image-container {
+  box-shadow: 0 0 0px rgba(93, 155, 213, 0); /* Invisible por defecto */
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.project-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.project-slide {
+  max-width: 900px;
+  margin: auto;
+  height: 800px; /* Altura fija de todo el slide */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mantener items arriba */
+  position: relative;
+}
+
+
+.project-img {
+    flex: 0 0 380px;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.project-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.project-desc {
+  color: #E3F2FF;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.project-tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.project-tech-icons i {
+  transition: transform 0.25s ease;
+}
+
+.project-tech-icons i:hover {
+  transform: scale(1.2);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #376BA5;
+  padding: 16px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background: #5D9BD5;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.group:hover .project-image-container {
+  /* Zoom hacia afuera del contenedor completo */
+  transform: scale(1.03); 
+  /* Glow solo alrededor de la imagen */
+  box-shadow: 0 0 30px 5px rgba(93, 155, 213, 0.4);
+}
+
+.arrow.left { left: -80px; }
+.arrow.right { right: -80px; }
+
+/* =============================
+   TECH ITEMS
+============================= */
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #E3F2FF;
+  background: #0A1C2E;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.tech-item i {
+  font-size: 1.6rem;
+}
+
+.tech-item:hover {
+  transform: scale(1.08);
+  background: #1D3D5E;
+}
+
+.tech-img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* =============================
+   TIMELINE PROFESIONAL
+============================= */
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #5D9BD5, #4180C1);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 70px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: #5D9BD5;
+  border-radius: 50%;
+  border: 3px solid #142C47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.6s ease-out, background 0.3s ease;
+}
+
+.timeline-item.active .timeline-dot {
+  transform: scale(1.2);
+}
+
+.timeline-dot i {
+  color: #E3F2FF;
+}
+
+/* Content Box */
+.timeline-content {
+  background: #142C47;
+  padding: 1.5rem 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #E3F2FF;
+}
+
+.timeline-content p {
+  color: #E3F2FF;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 0;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: #1D3D5E;
+}
+
+/* =============================
+   BACK TO TOP
+============================= */
+#backToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #376BA5;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#backToTop:hover {
+  background: #5D9BD5;
+  transform: scale(1.1);
+}
+
+/* =============================
+   UTILES
+============================= */
+.hidden { display: none; }
+
+
+/* Shimmer animado sobre la imagen */
+@keyframes shimmer {
+  0% { transform: translateX(-100%) }
+  100% { transform: translateX(100%) }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.25) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+/* Imagen de proyecto - glow elegante */
+.project-slide img {
+  transform: none !important;
+  transition: transform 0.5s ease;
+}
+
+.project-slide:hover img {
+  transform: none; /* No zoom interno */
+}
+
+.project-slide:hover {
+  box-shadow: none !important;
+}
+
+/* Tecnologías como cuadro */
+.project-slide .tech-item {
+  background: #142C47;
+  color: #E3F2FF;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+}
+
+.project-slide .tech-item:hover {
+  transform: scale(1.08);
+  background: #1D3D5E;
+}
+
+/* Tech img */
+.project-slide .tech-img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Links GitHub / Demo */
+.project-slide a {
+  color: #E3F2FF;
+  font-weight: 500;
+}
+.project-slide a:hover {
+  color: #ffffff;
+  background: #5D9BD5;
+}
+
+/* --- PROYECTOS UNIFICADOS --- */
+
+/* Forzar tamaño proporcional de imagen */
+.project-img-fixed {
+  width: 100%;
+  height: 380px; /* Altura idéntica para todas */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Contenedor del resplandor (Glow) */
+.project-image-container {
+  box-shadow: 0 0 0px rgba(93, 155, 213, 0);
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+.group:hover .project-image-container {
+  transform: scale(1.02); /* Zoom suave hacia afuera */
+  box-shadow: 0 0 40px 10px rgba(93, 155, 213, 0.35); /* Glow azul */
+}
+
+/* Tipografía y Textos */
+.project-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-desc {
+  color: #e0e0e0;
+  line-height: 1.6;
+  max-width: 85%;
+  margin: 0 auto 1.5rem;
+}
+
+/* Botones de Links */
+.btn-project {
+  background: #142C47;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #E3F2FF;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-project:hover {
+  background: #5D9BD5;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(93, 155, 213, 0.4);
+}
+
+
+/* Shimmer Anim */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 2s infinite;
+}
+
+
+
+/* =============================
+   FLECHAS FIJAS
+============================= */
+.project-wrapper {
+  position: relative; /* Contenedor relativo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(20, 44, 71, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(93, 155, 213, 0.3);
+  color: #E3F2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow.left { left: -80px; }
+.arrow.right { right: -80px; }
+
+.arrow:hover {
+  background: #5D9BD5;
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 0 25px rgba(93, 155, 213, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .arrow.left { left: -20px; }
+  .arrow.right { right: -20px; }
+}
+
+
+/* =============================
+   IMÁGENES DE PROYECTO FIJAS
+============================= */
+.project-img-fixed {
+  width: 100%;
+  height: 380px; /* Altura fija para todas */
+  object-fit: cover;
+  border-radius: 12px;
+}

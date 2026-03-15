@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sofía Sandoval | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR ELEGANTE -->
+<nav class="fixed top-0 left-0 w-full bg-[#0A1C2E]/80 backdrop-blur-md shadow-md z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="font-bold text-lg">Sofía Sandoval</h1>
+
+    <!-- Botón hamburguesa -->
+    <button id="menu-btn" class="md:hidden text-3xl text-[#E3F2FF] focus:outline-none">
+      &#9776;
+    </button>
+
+    <!-- Menú escritorio -->
+    <div class="hidden md:flex gap-6 text-sm md:text-base">
+      <a href="#hero" class="hover:text-[#5D9BD5] transition">Inicio</a>
+      <a href="#skills" class="hover:text-[#5D9BD5] transition">Habilidades</a>
+      <a href="#projects" class="hover:text-[#5D9BD5] transition">Proyectos</a>
+      <a href="#experiencia" class="hover:text-[#5D9BD5] transition">Experiencia</a>
+      <a href="#contacto" class="hover:text-[#5D9BD5] transition">Contacto</a>
+    </div>
+  </div>
+
+  <!-- Menú móvil deslizable -->
+  <div id="mobile-menu" class="fixed top-0 right-[-100%] w-64 h-full bg-[#0A1C2E]/95 backdrop-blur-md shadow-lg flex flex-col p-6 gap-6 transition-all duration-300 z-40">
+    <button id="close-btn" class="self-end text-2xl text-[#E3F2FF]">&times;</button>
+    <a href="#hero" class="hover:text-[#5D9BD5] transition">Inicio</a>
+    <a href="#skills" class="hover:text-[#5D9BD5] transition">Habilidades</a>
+    <a href="#projects" class="hover:text-[#5D9BD5] transition">Proyectos</a>
+    <a href="#experiencia" class="hover:text-[#5D9BD5] transition">Experiencia</a>
+    <a href="#contacto" class="hover:text-[#5D9BD5] transition">Contacto</a>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.style.right = '0';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.style.right = '-100%';
+  });
+</script>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- HERO -->
+
+<section id="hero" class="min-h-screen flex items-center justify-center text-center px-6 pt-24
+bg-gradient-to-r from-[#0A1C2E] via-[#1D3D5E] to-[#5D9BD5]">
+
+<div id="hero-content" class="opacity-0 translate-y-10 transition duration-1000 max-w-2xl">
+
+<img 
+src="imagenes/foto_perfil.png"
+alt="Foto Sofía Sandoval"
+class="w-44 h-44 md:w-52 md:h-52 mx-auto mb-6 rounded-full border-4 border-white object-cover shadow-[0_8px_25px_rgba(0,0,0,0.35)]">
+
+<h1 class="text-4xl md:text-6xl font-bold mb-6">
+Sofía Isabela Sandoval Vásquez
+</h1>
+
+<p class="text-lg md:text-xl text-[#E3F2FF] mb-10">
+Utilizo el desarrollo de software para impulsar la transformación digital y optimizar procesos.
+</p>
+
+<!-- SOCIAL -->
+
+<div class="flex justify-center gap-6 text-2xl mb-8">
+
+<a href="https://github.com/SSIsa14"
+target="_blank"
+class="bg-[#142C47] p-3 rounded-full hover:bg-[#4180C1] hover:scale-110 transition duration-300 shadow-lg">
+
+<i class="fa-brands fa-github"></i>
+
+</a>
+
+<a href="https://linkedin.com/in/sofia-sandoval-vasquez/din"
+target="_blank"
+class="bg-[#142C47] p-3 rounded-full hover:bg-[#4180C1] hover:scale-110 transition duration-300 shadow-lg">
+
+<i class="fa-brands fa-linkedin"></i>
+
+</a>
+
+</div>
+
+<!-- CV -->
+
+<div id="contacto" class="flex justify-center mb-10">
+
+<a href="cv/cv_sofia_sandoval.pdf"
+target="_blank"
+class="bg-[#376BA5] px-7 py-3 rounded-full hover:bg-[#5D9BD5] transition shadow-lg flex items-center gap-2">
+
+<i class="fa-solid fa-file-pdf"></i>
+Ver Curriculum
+
+</a>
+
+</div>
+
+<!-- CONTACTO -->
+
+<div class="mt-6">
+
+<h2 class="text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-3">
+
+<i class="fa-solid fa-paper-plane text-[#5D9BD5]"></i>
+Contáctame
+
+</h2>
+
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+
+<div class="bg-[#142C47] px-7 py-3 rounded-full text-base md:text-lg shadow">
+sandovalisabela0524@gmail.com
+</div>
+
+<button onclick="copyEmail()"
+class="bg-[#4180C1] px-7 py-3 rounded-full hover:bg-[#5D9BD5] transition shadow-lg">
+
+Copiar correo
+
+</button>
+
+</div>
+
+<p id="copyMessage" class="mt-4 text-[#E3F2FF] opacity-0 transition">
+Correo Copiado 
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="bg-[#0A1C2E] py-20 px-8">
+
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-4xl font-bold mb-12 flex items-center justify-center gap-3">
+  <i class="fa-solid fa-code text-[#5D9BD5]"></i>
+  Habilidades
+</h2>
+
+<h3 class="text-2xl font-semibold mb-8 text-[#5D9BD5]">
+Habilidades Técnicas
+</h3>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<!-- FRONTEND -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">Frontend</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+<div class="tech-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+<div class="tech-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+<div class="tech-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+<div class="tech-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+
+</div>
+
+</div>
+
+<!-- BACKEND -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">Backend</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+<div class="tech-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+<div class="tech-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+
+</div>
+
+</div>
+
+<!-- LENGUAJES -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">Lenguajes</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+<div class="tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+
+</div>
+
+</div>
+
+<!-- BASES DE DATOS -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">Bases de Datos</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+<div class="tech-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+
+</div>
+
+</div>
+
+<!-- DEVOPS / HERRAMIENTAS -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">DevOps / Herramientas</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item">
+<i class="devicon-git-plain colored"></i>
+<span>Git</span>
+</div>
+
+<div class="tech-item">
+<i class="devicon-github-original"></i>
+<span>GitHub</span>
+</div>
+
+<div class="tech-item">
+<i class="devicon-docker-plain colored"></i>
+<span>Docker</span>
+</div>
+
+<div class="tech-item">
+<i class="devicon-jenkins-line"></i>
+<span>Jenkins</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- GAME DEVELOPMENT -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">Desarrollo de Videojuegos</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item">
+
+<img 
+src="imagenes/unity.png"
+alt="Unity"
+class="tech-img">
+
+<span>Unity</span>
+
+</div>
+
+<div class="tech-item">
+
+<i class="devicon-csharp-plain colored"></i>
+<span>C#</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- AI -->
+
+<div class="reveal skill-card bg-[#142C47] p-7 rounded-xl shadow">
+
+<h4 class="font-semibold mb-5 text-lg">AI</h4>
+
+<div class="flex flex-wrap gap-3">
+
+<div class="tech-item">
+<img src="imagenes/orange.png" class="tech-img">
+<span>Orange Data Mining</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SOFT SKILLS -->
+
+<h3 class="text-2xl font-semibold mt-16 mb-8 text-[#5D9BD5]">
+Habilidades Blandas
+</h3>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-lightbulb text-[#5D9BD5] text-xl"></i>
+Resolución de Problemas
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-brain text-[#5D9BD5] text-xl"></i>
+Pensamiento Analítico
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-list-check text-[#5D9BD5] text-xl"></i>
+Capacidad de Organización
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-people-group text-[#5D9BD5] text-xl"></i>
+Liderazgo
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-arrows-rotate text-[#5D9BD5] text-xl"></i>
+Adaptabilidad
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-book text-[#5D9BD5] text-xl"></i>
+Autodidacta
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-comments text-[#5D9BD5] text-xl"></i>
+Comunicación Efectiva
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-ear-listen text-[#5D9BD5] text-xl"></i>
+Escucha Activa
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-handshake text-[#5D9BD5] text-xl"></i>
+Colaboración
+</div>
+
+<div class="reveal skill-card bg-[#142C47] p-5 rounded-lg flex items-center gap-3">
+<i class="fa-solid fa-clock text-[#5D9BD5] text-xl"></i>
+Gestión del Tiempo
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROYECTOS -->
+
+<section id="projects" class="bg-[#0F2438] py-24 px-8">
+
+<div class="max-w-6xl mx-auto text-center">
+
+<h2 class="text-4xl font-bold mb-14 flex items-center justify-center gap-3">
+
+<i class="fa-solid fa-diagram-project text-[#5D9BD5]"></i>
+Proyectos
+
+</h2>
+
+
+<div class="project-wrapper">
+
+<!-- FLECHA IZQUIERDA -->
+
+<button onclick="prevProject()" class="arrow left">
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+<!-- PROYECTO 1 -->
+<div class="project-slide reveal group max-w-xl mx-auto">
+
+  <!-- Contenedor de imagen -->
+
+  <div class="project-image-container relative overflow-hidden rounded-lg transition-all duration-500 group-hover:scale-[1.02]">
+  <img 
+    src="imagenes/n1.jpeg" 
+    alt="Proyecto 1" 
+    class="w-full h-auto rounded-lg object-cover"
+  />
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-shimmer"></div>
+</div>
+
+  <!-- Icono centrado -->
+<div class="flex justify-center mb-3 mt-10 transition-transform duration-500 group-hover:scale-110">
+  <i class="fa-solid fa-landmark text-[#5D9BD5] text-3xl"></i>
+</div>
+
+  <!-- Título -->
+  <h3 class="project-title text-center text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#5D9BD5]">
+    La Ruina Sagrada: Guardianes del Pasado
+  </h3>
+
+  <!-- Descripción -->
+  <p class="project-desc text-center text-[#e0e0e0] leading-relaxed mb-4 transition-colors duration-300 group-hover:text-white">
+    Desarrollo de un videojuego RPG inspirado en mecánicas de exploración y recolección de misiones. 
+    El objetivo principal fue digitalizar la riqueza histórica de Tikal, permitiendo a los usuarios recorrer 
+    este patrimonio cultural de Guatemala en un entorno inmersivo y educativo.
+  </p>
+
+  <!-- Tecnologías como cuadros -->
+  <div class="flex justify-center flex-wrap gap-3 mt-3">
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-csharp-plain colored"></i>
+      <span>C#</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <img src="imagenes/unity.png" alt="Unity" class="tech-img">
+      <span>Unity</span>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- PROYECTO 2 -->
+<div class="project-slide reveal group max-w-xl mx-auto hidden">
+
+  <!-- Contenedor de imagen con glow y shimmer -->
+  <div class="project-image-container relative overflow-hidden rounded-lg transition-all duration-500 group-hover:scale-[1.02]">
+    <img 
+      src="imagenes/n4.jpeg" 
+      alt="Bestie Paws" 
+      class="project-img-fixed"
+    />
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-shimmer"></div>
+  </div>
+
+  <!-- Icono centrado -->
+  <div class="flex justify-center mb-3 mt-10 transition-transform duration-500 group-hover:scale-110">
+    <i class="fa-solid fa-paw text-[#5D9BD5] text-3xl"></i>
+  </div>
+
+  <!-- Título -->
+  <h3 class="project-title text-center text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#5D9BD5]">
+    Bestie Paws
+  </h3>
+
+  <!-- Descripción -->
+  <p class="project-desc text-center text-[#e0e0e0] leading-relaxed mb-4 transition-colors duration-300 group-hover:text-white">
+    Desarrollo de una plataforma de comercio electrónico diseñada para la gestión completa de productos veterinarios y para mascotas. 
+    Además de un sistema administrativo que permite la edición de contenido en tiempo real y una experiencia de usuario fluida, 
+    conectando un frontend moderno con una arquitectura de datos sólida.
+  </p>
+
+  <!-- Tecnologías como cuadros -->
+  <div class="flex justify-center flex-wrap gap-3 mt-3">
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-react-original colored"></i>
+      <span>React</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-php-plain colored"></i>
+      <span>PHP</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-mysql-plain colored"></i>
+      <span>MySQL</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- PROYECTO 3 -->
+<div class="project-slide reveal group max-w-xl mx-auto hidden">
+
+  <!-- Contenedor de imagen con glow y shimmer -->
+  <div class="project-image-container relative overflow-hidden rounded-lg transition-all duration-500 group-hover:scale-[1.02]">
+    <img 
+      src="imagenes/n2.jpeg" 
+      alt="Health Integrated Ecosystem" 
+      class="project-img-fixed"
+    />
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-shimmer"></div>
+  </div>
+
+  <!-- Icono centrado -->
+  <div class="flex justify-center mb-3 mt-10 transition-transform duration-500 group-hover:scale-110">
+    <i class="fa-solid fa-hospital text-[#5D9BD5] text-3xl"></i>
+  </div>
+
+  <!-- Título -->
+  <h3 class="project-title text-center text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#5D9BD5]">
+    Health Integrated Ecosystem
+  </h3>
+
+  <!-- Descripción -->
+  <p class="project-desc text-center text-[#e0e0e0] leading-relaxed mb-4 transition-colors duration-300 group-hover:text-white">
+    Diseño y desarrollo de un ecosistema digital compuesto por tres plataformas sincronizadas: Hospital, Farmacia y Aseguradora. 
+    El reto principal fue garantizar la interoperabilidad y el flujo de datos seguro entre las tres entidades para optimizar la gestión de servicios médicos y seguros.
+  </p>
+
+  <!-- Tecnologías como cuadros -->
+  <div class="flex justify-center flex-wrap gap-3 mt-3">
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-javascript-plain colored"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-typescript-plain colored"></i>
+      <span>TypeScript</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-angularjs-plain colored"></i>
+      <span>AngularJS</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-java-plain colored"></i>
+      <span>Java</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-mongodb-plain colored"></i>
+      <span>MongoDB</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-mysql-plain colored"></i>
+      <span>MySQL</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROYECTO 4 -->
+<div class="project-slide reveal group max-w-xl mx-auto hidden">
+
+  <!-- Contenedor de imagen con glow y shimmer -->
+  <div class="project-image-container relative overflow-hidden rounded-lg transition-all duration-500 group-hover:scale-[1.02]">
+    <img 
+      src="imagenes/n3.png" 
+      alt="Pharma-Flow & DevOps Infrastructure" 
+      class="project-img-fixed"
+    />
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-shimmer"></div>
+  </div>
+
+  <!-- Icono centrado -->
+  <div class="flex justify-center mb-3 mt-10 transition-transform duration-500 group-hover:scale-110">
+    <i class="fa-solid fa-gears text-[#5D9BD5] text-3xl"></i>
+  </div>
+
+  <!-- Título -->
+  <h3 class="project-title text-center text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#5D9BD5]">
+    Pharma-Flow & DevOps Infrastructure
+  </h3>
+
+  <!-- Descripción -->
+  <p class="project-desc text-center text-[#e0e0e0] leading-relaxed mb-4 transition-colors duration-300 group-hover:text-white">
+    Desarrollo de un sistema de farmacia enfocado en la eficiencia operativa. 
+    El proyecto destaca por la implementación de una arquitectura moderna basada en Docker y la creación de Pipelines CI/CD, 
+    garantizando un ciclo de vida de desarrollo ágil, escalable y automatizado.
+  </p>
+
+  <!-- Tecnologías como cuadros -->
+  <div class="flex justify-center flex-wrap gap-3 mt-3">
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-javascript-plain colored"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-typescript-plain colored"></i>
+      <span>TypeScript</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-angularjs-plain colored"></i>
+      <span>AngularJS</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-docker-plain colored"></i>
+      <span>Docker</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-jenkins-line colored"></i>
+      <span>Jenkins</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-mysql-plain colored"></i>
+      <span>MySQL</span>
+    </div>
+    <div class="tech-item hover:scale-105 transition-transform">
+      <i class="devicon-java-plain colored"></i>
+      <span>Java</span>
+    </div>
+  </div>
+
+
+  <!-- Botones GitHub / Ver Proyecto -->
+<div class="flex justify-center gap-4 mt-6">
+  <a href="https://github.com/SSIsa14/farmacia-proyecto" target="_blank" class="btn-project">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+</div>
+
+</div>
+
+<!-- FLECHA DERECHA -->
+
+<button onclick="nextProject()" class="arrow right">
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experiencia" class="bg-[#0A1C2E] py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+  
+    <section id="experiencia" class="bg-[#0A1C2E] py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-16 flex items-center justify-center gap-3 text-[#E3F2FF]">
+      <i class="fa-solid fa-briefcase text-[#5D9BD5]"></i>
+      Experiencia
+    </h2>
+  </div>
+    <div class="timeline">
+
+      <!-- Evento 1 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">
+          <i class="fa-solid fa-briefcase text-[#E3F2FF]"></i>
+        </div>
+        <div class="timeline-content">
+          <h3>Grupo PIT — Sistema de Gestión de Personal</h3>
+          <p>
+            Desarrollé un sistema digital que permite registrar y controlar entradas y salidas del personal mediante AppSheet y Google Sheets, además automatice cálculos de horarios y gestión de feriados lo que optimizó los procesos administrativos y mejoró la precisión en la gestión de asistencia
+          </p>
+        <img src="imagenes/pit.png" alt="Grupo PIT" class="h-10 w-30 mt-2">
+        </div>
+      </div>
+
+      <!-- Evento 2 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">
+          <i class="fa-solid fa-cloud text-[#E3F2FF]"></i>
+        </div>
+        <div class="timeline-content">
+          <h3>MyAppSoftware — Formación en Cloud Computing</h3>
+          <p>
+            Realicé un proceso de aprendizaje en Amazon Web Services y comprendí sus principales servicios, lo que fortaleció mis habilidades en tecnologías de la nube y buenas prácticas para el desarrollo moderno.
+          </p>
+           <img src="imagenes/myapp.png" alt="MyAppSoftware" class="h-10 w-20 mt-2">
+        </div>
+      </div>
+
+      <!-- Evento 3 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">
+          <i class="fa-solid fa-brain text-[#E3F2FF]"></i>
+        </div>
+        <div class="timeline-content">
+          <h3>Investigación en Inteligencia Artificial — Detección de Dislexia</h3>
+          <p>
+            Implementé un proyecto de investigación entrenando modelos de inteligencia artificial para detectar dislexia, trabajando con grandes volúmenes de datos mediante Orange Data Mining y aplicando técnicas de machine learning para extraer información significativa
+          </p>
+           <img src="imagenes/orange.png" alt="Orange Data Mining" class="h-10 w-30 mt-2">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTON VOLVER ARRIBA -->
+
+<button id="backToTop"
+class="fixed bottom-6 right-6 bg-[#376BA5] p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition duration-300 hover:bg-[#5D9BD5]">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
