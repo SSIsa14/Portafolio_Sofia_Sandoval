@@ -232,25 +232,6 @@ nav .md\\:flex a:hover {
 .arrow.left { left: -80px; }
 .arrow.right { right: -80px; }
 
-.project-glow-wrapper {
-  position: relative;
-  border-radius: 12px;
-  overflow: visible; /* Importante */
-}
-
-.project-glow-wrapper img {
-  display: block;
-  width: 100%;
-  height: 380px;
-  border-radius: 12px;
-  object-fit: cover;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.project-glow-wrapper:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 0 40px 10px rgba(93, 155, 213, 0.35);
-}
 
 /* =============================
    TECH ITEMS
@@ -372,25 +353,33 @@ nav .md\\:flex a:hover {
 }
 
 /* =============================
-   BACK TO TOP
+   BACK TO TOP MEJORADO
 ============================= */
 #backToTop {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: #376BA5;
-  padding: 1rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #5D9BD5, #376BA5);
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 15px rgba(93,155,213,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E3F2FF;
+  font-size: 1.3rem;
+  opacity: 0.9;
+  pointer-events: auto;
+  transition: all 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  z-index: 100;
 }
 
 #backToTop:hover {
-  background: #5D9BD5;
-  transform: scale(1.1);
+  transform: scale(1.2) rotate(-10deg);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5), 0 0 25px rgba(93,155,213,0.6);
+  opacity: 1;
 }
 
 /* =============================
@@ -582,7 +571,7 @@ nav .md\\:flex a:hover {
 /* =============================
    MEDIA QUERIES
 ============================= */
-@media (max-width: 1024px) {
+@media (max-width: 2000px) {
   .project-slide { padding: 0 0.5rem; }
   .arrow { width: 40px; height: 40px; }
 }
