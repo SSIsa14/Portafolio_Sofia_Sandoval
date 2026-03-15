@@ -413,14 +413,6 @@ Proyectos
 
 <div class="project-wrapper">
 
-<!-- FLECHA IZQUIERDA -->
-
-<button onclick="prevProject()" class="arrow left">
-
-<i class="fa-solid fa-chevron-left"></i>
-
-</button>
-
 <!-- PROYECTO 1 -->
 <div class="project-slide reveal group max-w-xl mx-auto">
 
@@ -645,15 +637,16 @@ Proyectos
 
 </div>
 
-<!-- FLECHA DERECHA -->
 
-<button onclick="nextProject()" class="arrow right">
+  <!-- FLECHAS DESKTOP (opcional, si quieres mantenerlas absolutas) -->
+    <button class="arrow desktop left" onclick="prevProject()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="arrow desktop right" onclick="nextProject()"><i class="fa-solid fa-chevron-right"></i></button>
 
-<i class="fa-solid fa-chevron-right"></i>
-
-</button>
-
-</div>
+  <!-- FLECHAS MÓVIL -->
+    <div class="project-arrows">
+    <button class="arrow mobile left" onclick="prevProject()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="arrow mobile right" onclick="nextProject()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
 
 </div>
 

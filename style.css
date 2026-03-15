@@ -135,10 +135,11 @@ nav .md\\:flex a:hover {
    PROYECTOS
 ============================= */
 
-.project-image-container {
-  box-shadow: 0 0 0px rgba(93, 155, 213, 0); /* Invisible por defecto */
+.project-image-container img {
+  width: 100%;
+  height: auto; /* permite escalado proporcional */
+  object-fit: cover;
   border-radius: 12px;
-  z-index: 10;
 }
 
 .project-wrapper {
@@ -146,19 +147,21 @@ nav .md\\:flex a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  flex-wrap: nowrap;
 }
-
 
 .project-slide {
   max-width: 900px;
+  width: 100%;
   margin: auto;
-  height: 800px; /* Altura fija de todo el slide */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Mantener items arriba */
+  justify-content: flex-start;
   position: relative;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
-
 
 .project-img {
     flex: 0 0 380px;
@@ -170,9 +173,9 @@ nav .md\\:flex a:hover {
 }
 
 .project-title {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin: 1rem 0 0.5rem 0;
   text-align: center;
 }
 
@@ -407,16 +410,15 @@ nav .md\\:flex a:hover {
 }
 
 /* Tecnologías como cuadro */
+/* Flex de tecnologías */
 .project-slide .tech-item {
-  background: #142C47;
-  color: #E3F2FF;
-  padding: 6px 10px;
-  border-radius: 8px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: all 0.25s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 4px;
 }
 
 .project-slide .tech-item:hover {
@@ -529,8 +531,8 @@ nav .md\\:flex a:hover {
   position: absolute;
   top: 50%; /* Centrado vertical */
   transform: translateY(-50%);
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background: rgba(20, 44, 71, 0.5);
   backdrop-filter: blur(10px);
@@ -544,8 +546,8 @@ nav .md\\:flex a:hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.arrow.left { left: -80px; }
-.arrow.right { right: -80px; }
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
 
 .arrow:hover {
   background: #5D9BD5;
@@ -553,12 +555,70 @@ nav .md\\:flex a:hover {
   box-shadow: 0 0 25px rgba(93, 155, 213, 0.5);
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  .arrow.left { left: -20px; }
-  .arrow.right { right: -20px; }
+
+
+/* =============================
+   MEDIA QUERIES
+============================= */
+@media (max-width: 1024px) {
+  .project-slide { padding: 0 0.5rem; }
+  .arrow { width: 40px; height: 40px; }
 }
 
+@media (max-width: 768px) {
+  /* Ocultar flechas absolutas de desktop */
+  .project-wrapper > .arrow.left,
+  .project-wrapper > .arrow.right {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-slide {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .project-wrapper {
+    flex-direction: column;
+  }
+
+  .arrow {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin: 0.5rem 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  .project-desc {
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+    /* Contenedor temporal para ambas flechas */
+  .project-arrows {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    margin: 0; 
+  }
+
+  .arrow.left,
+  .arrow.right {
+    order: unset; /* ya no necesitamos order individual */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title { font-size: 1.1rem; }
+  .project-desc { font-size: 0.95rem; }
+}
 
 /* =============================
    IMÁGENES DE PROYECTO FIJAS
